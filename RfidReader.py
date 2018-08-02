@@ -4,12 +4,15 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+logger.info('Starting...');
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.OUT)
 GPIO.output(23, False)
 GPIO.output(24, False)
 PortRF = serial.Serial('/dev/ttyAMA0', 9600)
+
+logger.info('Setup completed successfully !');
 
 while True:
     ID = ""
