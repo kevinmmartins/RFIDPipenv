@@ -6,10 +6,10 @@ import traceback
 class Rfid:
     def __init__(self):
         logging.basicConfig(level=logging.INFO);
-        logger = logging.getLogger(__name__);
-        logger.info('Starting...');
-        portRF = serial.Serial('/dev/ttyAMA0', 9600)
-        logger.info('Setup completed successfully !');
+        self.logger = logging.getLogger(__name__);
+        self.logger.info('Starting...');
+        self.portRF = serial.Serial('/dev/ttyAMA0', 9600)
+        self.logger.info('Setup completed successfully !');
 
     def read(self):
         try:
