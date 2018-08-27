@@ -23,5 +23,5 @@ class Rfid:
                         self.logger.info(hex(ord(read_byte)));
                     self.logger.info(id);
         except:
-            logger.error('Unexpected error: ' + traceback.format_exc());
+            self.logger.error('Unexpected error: ' + traceback.format_exc());
             raise;
