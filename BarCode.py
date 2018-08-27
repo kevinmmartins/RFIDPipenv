@@ -1,15 +1,19 @@
 import traceback
 import logging
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-logger.info('Starting');
 
-while True:
-    try:
-        barcode = input('Pass the product: ');
-        logger.info('Barcode scanned: '+ barcode);
-    except:
-        logger.error('Unexpected error: ' + traceback.format_exc());
-        raise
-    
+class BarCode:
+
+    def __init__(self):
+        logging.basicConfig(level=logging.INFO)
+        self.logger = logging.getLogger(__name__)
+        self.logger.info('Starting');
+
+    def get_product_code(self):
+        while True:
+            try:
+                barcode = input('Pass the product: ');
+                self.logger.info('Barcode scanned: ' + barcode);
+            except:
+                self.logger.error('Unexpected error: ' + traceback.format_exc());
+                raise
