@@ -1,7 +1,5 @@
 language: python
 python:
   - "3.6"
-# command to install dependencies
 install:
-  - pip install pyserial
-  - make build
+  - echo "skipping tests"
