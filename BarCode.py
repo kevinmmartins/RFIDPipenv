@@ -7,13 +7,20 @@ class BarCode:
     def __init__(self):
         logging.basicConfig(level=logging.INFO)
         self.logger = logging.getLogger(__name__)
-        self.logger.info('Starting');
+        self.logger.info('Starting')
+        self.barcode_list = []
 
-    def get_product_code(self):
-        while True:
-            try:
-                barcode = input('Pass the product: ');
-                self.logger.info('Barcode scanned: ' + barcode);
-            except:
-                self.logger.error('Unexpected error: ' + traceback.format_exc());
-                raise
+    def add_product(self):
+        try:
+            barcode = input('Pass the product: ')
+            self.logger.info('Barcode scanned: ' + barcode)
+            self.barcode_list.append(barcode)
+        except:
+            self.logger.error('Unexpected error: ' + traceback.format_exc())
+            raise
+
+    def clear_product_list(self):
+        self.barcode_list.clear()
+
+    def get_product_list(self):
+        return self.barcode_list
