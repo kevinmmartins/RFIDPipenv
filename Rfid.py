@@ -3,12 +3,12 @@ import logging
 import traceback
 
 
-class Rfid:
+class Rfid(object):
     def __init__(self):
         logging.basicConfig(level=logging.INFO)
         self.logger = logging.getLogger(__name__)
         self.logger.info('Starting...')
-        self.port_rf = serial.Serial('/dev/ttyAMA0', 9600)
+        self.port_rf = serial.Serial('/dev/serial0',115200)
         self.logger.info('Setup completed successfully !')
 
     def read(self):
