@@ -5,3 +5,8 @@ sudo apt-get install python-serial
 
 Siga este tutorial:
 https://behindthesciences.com/electronics/raspberry-pi-rfid-tag-reader/
+
+
+para executar o server (Porta 8000):
+
+python ServerRFID
