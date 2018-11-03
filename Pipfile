@@ -6,9 +6,9 @@ name = "pypi"
 [dev-packages]
 
 [packages]
-requests = "*"
 "rpi.gpio" = "*"
 pyserial = "*"
+requests = ">=2.20.0"
 
 [requires]
 python_version = "3.5"
